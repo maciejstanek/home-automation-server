@@ -1,0 +1,79 @@
+* {
+	font-family: Ubuntu, Arial, sans-serif;
+	user-select: none;
+	-webkit-user-select: none;
+}
+body {
+	background-color: #F8F8FF;
+}
+
+div.body {
+	max-width: 500px;
+	margin: 0 auto;
+}
+div.body > div {
+	
+}
+div.header {
+	text-align: center;	
+	font-size: x-large;
+	color: #114;
+	font-weight: bold;
+	text-shadow: 2px 2px 3px #AAC;
+}
+div.section {
+	background-color: #EEF;
+	margin: 10px;
+	padding: 5px;
+	border-radius: 10px;
+	border: 1px solid #AAC;
+	box-shadow: 2px 2px 3px silver;
+	color: #114;
+}
+div.section-main {
+}
+div.section-main > div {
+	display: inline-block;
+	margin: 0 1px;
+	border-radius: 9999px;
+	padding: 3px 7px;
+}
+div.footer {
+	text-align: center;	
+	color: #AAC;
+	font-size: x-small;
+}
+div.section-title {
+}
+div.section-value {
+}
+div.section-button {
+	float: right;
+}
+div.section-main > div.section-element-red {
+	border: 1px solid #CAA;
+	background-color: #FEE;
+}
+div.section-main > div.section-element-yellow {
+	border: 1px solid #CCA;
+	background-color: #FFE;
+}
+div.section-main > div.section-element-green {
+	border: 1px solid #ACA;
+	background-color: #EFE;
+}
+div.section-main > div.section-element-magenta {
+	border: 1px solid #CAC;
+	background-color: #FEF;
+}
+div.section-main > div.section-element-white {
+	border: 1px solid #CCC;
+	background-color: #FFF;
+}
+div.section-more > img {
+	width: 100%;
+	margin-top: 3px;
+}
+div.section-more > img.hidden {
+	display: none;
+}
