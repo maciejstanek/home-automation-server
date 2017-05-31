@@ -1,7 +1,8 @@
 $(function() {
 	$(".section-button-details").click(function() {
-		console.log("dupa")
-		console.log($(this).parent().children(".section-more").css( "border", "1px solid red" ));
-		$(this).parent().children(".section-more").children("img").toggleClass("hidden")
+		$(this).parent().parent().find(".section-more").toggleClass("hidden")
+	});
+	$(".header-refresh").click(function() {
+		console.log("refresh");
 	});
 });

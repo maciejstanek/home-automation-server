@@ -1,7 +1,7 @@
 <?php
 include_once "php/common.php";
 ?>
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pl">
 	<head>
 		<meta charset="UTF-8"/> 
@@ -14,7 +14,8 @@ include_once "php/common.php";
 	<body>
 		<div class="body">
 			<div class="header">
-				<?=SERVER_NAME?>
+				<div class="header-title"><?=SERVER_NAME?></div>
+				<div class="header-refresh"><img src="img/icon_refresh.png"/></div>
 			</div>
 			<div class="section">
 				<div class="section-title">TODO: PIR sensor status</div>
@@ -24,9 +25,8 @@ include_once "php/common.php";
 					<div class="section-element-yellow section-title">Temperature</div>
 					<div class="section-element-yellow section-value">23.48&#176;C</div>
 					<div class="section-element-magenta section-button section-button-details">details</div>
-					<div class="section-element-white section-button section-button-refresh">refresh</div>
 				</div>
-				<div class="section-more"><img class="" src="img/wegierska_gorka.png"/></div>
+				<div class="section-more hidden"><img src="img/wegierska_gorka.png"/></div>
 			</div>
 			<?php for($i=0;$i<NUMBER_OF_RELAYS;$i++): ?>	
 			<div class="section">

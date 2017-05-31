@@ -1,12 +1,10 @@
 * {
 	font-family: Ubuntu, Arial, sans-serif;
 	user-select: none;
-	-webkit-user-select: none;
 }
 body {
 	background-color: #F8F8FF;
 }
-
 div.body {
 	max-width: 500px;
 	margin: 0 auto;
@@ -15,17 +13,34 @@ div.body > div {
 	
 }
 div.header {
+	padding: 0 20px;
+}
+div.header-title {
+	display: inline-block;
 	text-align: center;	
 	font-size: x-large;
 	color: #114;
 	font-weight: bold;
 	text-shadow: 2px 2px 3px #AAC;
 }
+div.header-refresh {
+	display: inline-block;
+	float: right;
+	border: 1px solid red;
+	border-radius: 9999px;
+	padding: 0;
+}
+div.header-refresh > img {
+	width: 30px;
+	height: 30px;
+}
+div.header-refresh > img :hover {
+}
 div.section {
 	background-color: #EEF;
 	margin: 10px;
 	padding: 5px;
-	border-radius: 10px;
+	border-radius: 18px;
 	border: 1px solid #AAC;
 	box-shadow: 2px 2px 3px silver;
 	color: #114;
@@ -70,10 +85,16 @@ div.section-main > div.section-element-white {
 	border: 1px solid #CCC;
 	background-color: #FFF;
 }
-div.section-more > img {
+div.section-more {
 	width: 100%;
 	margin-top: 3px;
 }
-div.section-more > img.hidden {
+div.section-more.hidden {
+	/* transition: height 0.2s linear; */
 	display: none;
+}
+div.section-more > img {
+	width: 100%;
+}
+div.section-more > img.hidden {
 }
