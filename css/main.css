@@ -26,15 +26,19 @@ div.header-title {
 div.header-refresh {
 	display: inline-block;
 	float: right;
-	border: 1px solid red;
 	border-radius: 9999px;
 	padding: 0;
 }
 div.header-refresh > img {
 	width: 30px;
 	height: 30px;
+	transition: transform 0.2s;
 }
-div.header-refresh > img :hover {
+div.header-refresh > img:hover {
+	transform: rotate(10deg);
+}
+div.header-refresh > img:active {
+	transform: rotate(180deg);
 }
 div.section {
 	background-color: #EEF;
@@ -64,6 +68,13 @@ div.section-value {
 }
 div.section-button {
 	float: right;
+	transition: transform 0.2s;
+}
+div.section-button:hover {
+	transform: scale(1.04);
+}
+div.section-button:active {
+	transform: scale(0.8);
 }
 div.section-main > div.section-element-red {
 	border: 1px solid #CAA;

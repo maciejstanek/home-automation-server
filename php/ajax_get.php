@@ -1,3 +1,5 @@
 <?php
+include_once "common.php";
 
-echo 1;
+echo json_encode(['t' => 12, 'p' => 33]);
+

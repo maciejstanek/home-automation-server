@@ -3,6 +3,12 @@
 define("SERVER_PATH", "/var/www/html/mstanek/home_automation_server");
 define("SERVER_NAME", "Home Automation Server");
 
+define("ARDUINO_IP", "192.168.1.171");
+/* Arduino commands (POST 'Q'):
+  - 'G': get all measurements
+  - 'R[1-3][UDT]': high/low/toggle a specific relay
+*/
+
 define("NUMBER_OF_RELAYS", 3);
 
 define("DB_HOST", "localhost");

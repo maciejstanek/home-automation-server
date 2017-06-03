@@ -1,7 +1,5 @@
 <?php
-
 include_once "common.php";
-echo "test";
 
 if(isset($_POST['pir'])) {
 	$pir_sane_input = null;
@@ -17,15 +15,21 @@ if(isset($_POST['pir'])) {
 		$stmt = $conn->prepare("insert into pir_log (status) values (?)");
 		$stmt->bind_param("i", $pir_sane_input);
 		$stmt->execute();
-		$stmt->close();
-		/*
-		$result = $stmt->get_result();
-		if($result->num_rows === 0){
-			$msg = "Nieprawidłowe dane logowania";
+		if($conn->affected_rows) {
+			echo '(Success!)';
 		} else {
-			$_SESSION["uzytkownik"] = $result->fetch_assoc()['imie'];
-			header("Location: private.php");
+			echo '(Invalid SQL query)';
 		}
-		*/
+		$stmt->close();
+	} else {
+		echo '(Invalid $_POST["pir"] format, allowed values are "0" and "1")';
 	}
+} else {
+	echo '(Missing $_POST["pir"] variable)';
 }
+
+/*
+$result = $stmt->get_result();
+$result->num_rows === 0
+$result->fetch_assoc()
+*/
