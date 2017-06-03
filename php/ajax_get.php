@@ -35,10 +35,13 @@ if($conn->affected_rows === 0) {
 }
 $stmt->close();
 
-echo json_encode([
+$parsed = [
 	"temperature" => $temperature . '&deg;C',
 	"pressure" => $pressure . 'hPa',
-	"pir" => $json_decoded['pir'],
-	"relay" => $json_decoded['r'],
-]);
+	"pir" => intval($json_decoded['pir']),
+];
+foreach($json_decoded['r'] as $k => $v) {
+	$parsed['relay' . ($k + 1)] = intval($v);
+}
+echo json_encode($parsed);
 
