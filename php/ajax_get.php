@@ -5,16 +5,8 @@ include_once "common.php";
 // 3. Return a JSON with the requested data
 
 $curl = curl_init();
-curl_setopt_array($curl, [
-	CURLOPT_URL => ARDUINO_IP, 
-	CURLOPT_HTTPHEADER => ['Content-Type: application/x-www-form-urlencoded'],
-	CURLOPT_RETURNTRANSFER => 1, 
-	CURLOPT_CONNECTTIMEOUT=> 2, 
-	CURLOPT_TIMEOUT=> 2, 
-	CURLOPT_FAILONERROR=> true, 
-	CURLOPT_POST => 1, 
-	CURLOPT_POSTFIELDS => 'Q=G',
-]); 
+$curlopts[CURLOPT_POSTFIELDS] = 'Q=G';
+curl_setopt_array($curl, $curlopts); 
 $resp = curl_exec($curl);
 if(!$resp) {
 	die(curl_error($curl));
@@ -44,4 +36,3 @@ foreach($json_decoded['r'] as $k => $v) {
 	$parsed['relay' . ($k + 1)] = intval($v);
 }
 echo json_encode($parsed);
-

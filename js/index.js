@@ -5,8 +5,12 @@ $(function() {
 	});
 	$(".section-button-toggle").click(function() {
 		var relay = $(this).parent().parent().attr("id");
-		relay = relay.substring(relay.lastIndexOf("-") + 1);
+		relay = relay.substr(relay.lastIndexOf("-") + 1);
 		console.log("--DBG-- Toggle " + relay);
+		$.post("php/ajax_set.php", {relay: relay}, function(data) {
+			console.log("--DBG-- Toggle returned '" + data + "'");
+			refreshField(relay, data);
+		});
 	});
 	function refreshField(index, value) {
 		var obj = $("#section-" + index).find(".section-value");
@@ -16,7 +20,7 @@ $(function() {
 			} else {
 				obj.html("Quiet");
 			}
-		} else if(index.substring(0, 5) == "relay") {
+		} else if(index.substr(0, 5) == "relay") {
 			if(value == 1) {
 				obj.html("On");
 			} else {
@@ -25,7 +29,7 @@ $(function() {
 		} else {
 			obj.html(value);
 		}
-		if(index == "pir" || index.substring(0, 5) == "relay") {
+		if(index == "pir" || index.substr(0, 5) == "relay") {
 			obj.removeClass("section-element-yellow");
 			if(value == 1) {
 				obj.addClass("section-element-green");

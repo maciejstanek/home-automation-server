@@ -16,3 +16,12 @@ define("DB_DATABASE", "home_automation_server");
 define("DB_USERNAME", "yellow");
 define("DB_PASSWORD", "pqqp");
 
+$curlopts = [
+	CURLOPT_URL => ARDUINO_IP, 
+	CURLOPT_HTTPHEADER => ['Content-Type: application/x-www-form-urlencoded'],
+	CURLOPT_RETURNTRANSFER => 1, 
+	CURLOPT_CONNECTTIMEOUT => 2, 
+	CURLOPT_TIMEOUT => 2, 
+	CURLOPT_FAILONERROR => true, 
+	CURLOPT_POST => 1,
+];
