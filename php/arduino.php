@@ -1,4 +1,5 @@
 <?php
+// This is a file at which Arduino posts its asynchronous PIR events
 include_once "common.php";
 
 if(isset($_POST['pir'])) {
@@ -27,9 +28,3 @@ if(isset($_POST['pir'])) {
 } else {
 	echo '(Missing $_POST["pir"] variable)';
 }
-
-/*
-$result = $stmt->get_result();
-$result->num_rows === 0
-$result->fetch_assoc()
-*/
