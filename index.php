@@ -5,10 +5,10 @@ include_once "php/common.php";
 <html lang="pl">
 	<head>
 		<meta charset="UTF-8"/> 
-		<!-- <link rel="icon" href="img/ico.png"/> -->
+		<link rel="icon" href="img/favicon.png"/>
 		<title><?=SERVER_NAME?></title>
 		<link rel="stylesheet" href="css/main.css"/>
-		<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
 		<script type="text/javascript" src="js/index.js"></script>
 	</head>
 	<body>
