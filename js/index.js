@@ -63,8 +63,13 @@ $(function() {
 			}
 		}
 	}
-	$(".header-refresh").click(function() {
-		console.log("--DBG-- Refresh request");
+	function refreshData(arg) {
+		var hard = false;
+		if(arg === true || arg.data === true) {
+			hard = true;
+		}
+		console.log("--DBG-- Refresh request, hard=" + hard);
+		// Receive data from the Arduino
 		$.get("php/ajax_get.php", function(data) {
 			var dataObj;
 			try {
@@ -76,8 +81,23 @@ $(function() {
 			}
 			console.log("--DBG-- " + data);
 			$.each(dataObj, refreshField);
+			// Redraw plots
+			if(hard) {
+				console.log("--DBG-- Hard refresh");
+				$.get("php/ajax_refresh_plots.php", function(data) {
+					console.log("--DBG--" + data);
+					$("#section-pressure").find(".section-more").find("img").attr("src", "php/gnuplot/pressure.png?" + new Date().getTime());
+					$("#section-temperature").find(".section-more").find("img").attr("src", "php/gnuplot/temperature.png?" + new Date().getTime());
+					// TODO: PIR info
+				});
+			}
 			console.log("--DBG-- Refresh done");
 		});
-	});
-	$(".header-refresh").click();
+	}
+	$(".header-refresh").click(true, refreshData);
+	refreshData(true);
+	var refreshInterval = setInterval(function() {
+		console.log("--DBG-- Interval refresh");
+		refreshData(false);
+	}, 10000);
 });

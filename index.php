@@ -30,13 +30,15 @@ include_once "php/common.php";
 					<div class="section-element-yellow section-value">---</div>
 					<div class="section-element-magenta section-button section-button-details">Details</div>
 				</div>
-				<div class="section-more hidden"><img src="img/wegierska_gorka.png"/></div>
+				<div class="section-more hidden"><img src=""/></div>
 			</div>
 			<div class="section" id="section-pressure">
 				<div class="section-main">
 					<div class="section-element-yellow section-title">Pressure</div>
 					<div class="section-element-yellow section-value">---</div>
+					<div class="section-element-magenta section-button section-button-details">Details</div>
 				</div>
+				<div class="section-more hidden"><img src=""/></div>
 			</div>
 			<?php for($i=1;$i<=NUMBER_OF_RELAYS;$i++): ?>	
 			<div class="section section-relay" id="section-relay<?=$i?>">
