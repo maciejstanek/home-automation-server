@@ -63,6 +63,7 @@ $(function() {
 			}
 		}
 	}
+	var refreshInterval;
 	function refreshData(arg) {
 		var hard = false;
 		if(arg === true || arg.data === true) {
@@ -92,12 +93,14 @@ $(function() {
 				});
 			}
 			console.log("--DBG-- Refresh done");
+			clearInterval(refreshInterval);
+			refreshInterval = setInterval(function() {
+				console.log("--DBG-- Interval refresh");
+				refreshData(false);
+			}, 10000);
+			console.log("--DBG-- Interval reset");
 		});
 	}
 	$(".header-refresh").click(true, refreshData);
 	refreshData(true);
-	var refreshInterval = setInterval(function() {
-		console.log("--DBG-- Interval refresh");
-		refreshData(false);
-	}, 10000);
 });
