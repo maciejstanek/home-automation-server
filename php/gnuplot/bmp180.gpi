@@ -1,7 +1,7 @@
 set timefmt '%s'
 set format x '%H:%M'
 set xdata time
-set xrange [1496698582:1496755303]
+set xrange [1496775875:1496843136]
 set grid
 set terminal pngcairo transparent size 640,320 enhanced font 'Ubuntu,10'
 set object 1 rectangle from graph 0, graph 0 to graph 1, graph 1 behind fillcolor rgb 'white' fillstyle noborder

@@ -97,7 +97,7 @@ $(function() {
 			refreshInterval = setInterval(function() {
 				console.log("--DBG-- Interval refresh");
 				refreshData(false);
-			}, 10000);
+			}, 4000);
 			console.log("--DBG-- Interval reset");
 		});
 	}
